@@ -1,4 +1,4 @@
-import * as path from 'path'
+﻿import * as path from 'path'
 import * as fs from 'fs'
 import * as os from 'os'
 import * as admin from 'firebase-admin'
@@ -58,7 +58,7 @@ export const getServiceAccountCredentials = (env?: string) => {
   }
   const envVar = `GOOGLE_APPLICATION_CREDENTIALS_${env.toUpperCase()}`
   const keyPath =
-    '/mnt/c/Users/Andr�/manifoldmarket/manifold/fir-c43a4-firebase-adminsdk-7lsit-67eb866646.json'
+    '/mnt/c/Users/André/manifoldfork/manifold/fir-c43a4-firebase-adminsdk-7lsit-1e71f662e2.json'
   //const keyPath = process.env[envVar]
   if (keyPath == null) {
     throw new Error(

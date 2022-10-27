@@ -2,7 +2,7 @@
   "name": "functions",
   "version": "1.0.0",
   "config": {
-    "firestore": "dev-mantic-markets.appspot.com"
+    "firestore": "fir-c43a4.firebaseapp.com"
   },
   "scripts": {
     "build": "yarn compile && rm -rf dist && mkdir -p dist/functions && cp -R ../common/lib dist/common && cp -R lib/src dist/functions/src && cp ../yarn.lock dist && cp package.json dist && cp .env.prod dist && cp .env.dev dist",
@@ -13,7 +13,7 @@
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
     "dev": "nodemon src/serve.ts",
-    "localDbScript": "firebase emulators:start --only functions,firestore,pubsub --import=./firestore_export",
+    "localDbScript": "firebase emulators:start --only functions,firestore,pubsub",
     "serve": "firebase use dev && yarn build && firebase emulators:start --only functions,firestore,pubsub --import=./firestore_export",
     "db:update-local-from-remote": "yarn db:backup-remote && gsutil -m rsync -r gs://$npm_package_config_firestore/firestore_export ./firestore_export",
     "db:backup-local": "firebase emulators:export --force ./firestore_export",
