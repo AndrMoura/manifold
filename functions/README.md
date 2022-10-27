@@ -17,8 +17,9 @@ Adapted from https://firebase.google.com/docs/functions/get-started
 0. `$ cd functions` to switch to this folder
 1. `$ yarn global add firebase-tools` to install the Firebase CLI globally
 2. `$ yarn` to install JS dependencies
-3. `$ firebase login` to authenticate the CLI tools to Firebase
-4. `$ firebase use dev` to choose the dev project
+3. `$ yarn build`
+4. `$ firebase login` to authenticate the CLI tools to Firebase
+5. `$ firebase use dev` to choose the dev project
 
 #### (Installing) For local development
 
@@ -70,8 +71,8 @@ Secrets are strings that shouldn't be checked into Git (eg API keys, passwords).
 - Read a secret: `$ firebase functions:secrets:access STRIPE_APIKEY`
 
 To access a secret from a cloud function, you'll need to:
-1. Expose it to the function, by editing the function in Google Cloud Console (ex [link for the onCreateContract function:] (https://console.cloud.google.com/functions/edit/us-central1/onCreateContract?env=gen1&authuser=0&hl=en&project=mantic-markets)). 
-   - Go to  "Security and image repo"->Secrets->Add->choose exposed as env variable.
-2. Expose it programatically to the function by adding a runWith param 
+
+1. Expose it to the function, by editing the function in Google Cloud Console (ex [link for the onCreateContract function:] (https://console.cloud.google.com/functions/edit/us-central1/onCreateContract?env=gen1&authuser=0&hl=en&project=mantic-markets)).
+   - Go to "Security and image repo"->Secrets->Add->choose exposed as env variable.
+2. Expose it programatically to the function by adding a runWith param
    - Example: `.runWith({ secrets: ['MAILGUN_KEY', 'DREAM_KEY'] }`)
- 
