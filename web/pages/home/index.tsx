@@ -79,6 +79,7 @@ export async function getStaticProps() {
 export default function Home(props: { globalConfig: GlobalConfig }) {
   const user = useUser()
   const isAdmin = useAdmin()
+  console.log('is_Aadmin', isAdmin)
   const globalConfig = useGlobalConfig() ?? props.globalConfig
 
   useRedirectIfSignedOut()

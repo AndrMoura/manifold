@@ -64,7 +64,7 @@ export const backupDb = functions.pubsub
       const client = new firestore.v1.FirestoreAdminClient()
       const project = process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT
       if (project == null) {
-        throw new Error('No project ID environment variable set.')
+        throw new Error('No project ID envir onment variable set.')
       }
       const responses = await backupDbCore(
         client,

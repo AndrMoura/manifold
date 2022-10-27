@@ -1,6 +1,6 @@
 import { APIError, newEndpoint } from './api'
 import { isProd } from './utils'
-import { sendMarketCloseEmails } from 'functions/src/market-close-notifications'
+import { sendMarketCloseEmails } from './market-close-notifications'
 
 // Function for testing scheduled functions locally
 export const testscheduledfunction = newEndpoint(

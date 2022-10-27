@@ -49,13 +49,17 @@ const getFirebaseActiveProject = (cwd: string) => {
 
 export const getServiceAccountCredentials = (env?: string) => {
   env = env || getFirebaseActiveProject(process.cwd())
+  // print env
+
   if (env == null) {
     throw new Error(
       "Couldn't find active Firebase project; did you do `firebase use <alias>?`"
     )
   }
   const envVar = `GOOGLE_APPLICATION_CREDENTIALS_${env.toUpperCase()}`
-  const keyPath = process.env[envVar]
+  const keyPath =
+    '/mnt/c/Users/André/manifoldmarket/manifold/fir-c43a4-firebase-adminsdk-7lsit-67eb866646.json'
+  //const keyPath = process.env[envVar]
   if (keyPath == null) {
     throw new Error(
       `Please set the ${envVar} environment variable to contain the path to your ${env} environment key file.`

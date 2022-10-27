@@ -9,7 +9,7 @@ case $ENV in
       FIREBASE_PROJECT=prod
       NEXT_ENV=PROD ;;
     localdb)
-      FIREBASE_PROJECT=dev
+      FIREBASE_PROJECT=fir-c43a4
       NEXT_ENV=DEV
       EMULATOR=true ;;
     *)
@@ -17,6 +17,10 @@ case $ENV in
       exit 1
 esac
 
+# print
+echo "Environment: $FIREBASE_PROJECT"
+echo "Next.js: $NEXT_ENV"
+echo "Emulator: $EMULATOR"
 firebase use $FIREBASE_PROJECT
 
 if [ ! -z $EMULATOR ]
