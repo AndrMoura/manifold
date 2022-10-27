@@ -2,6 +2,30 @@
 
 This [monorepo][] has basically everything involved in running and operating Manifold.
 
+## Install Packages (NEW)
+
+- Install gcloud: https://cloud.google.com/sdk/docs/install
+- NodeJS: `$ curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -`
+- Yarn: `$ curl -o- -L https://yarnpkg.com/install.sh | bash`
+- Java: `$ sudo apt install openjdk-17-jre-headless`
+- Check installs: `$ node -v && yarn -v && java --version`
+
+### Firebase
+
+- Create firebase project: https://console.firebase.google.com/. Create an web app too and grab it's configuration and change it at `$ ./common/envs/dev.ts`
+- Create a private key from firebase project settings: Service Account tab > Firebase SDK admin and download the `.json`.
+- `$ \functions\src\scripts\script-init.ts` and change keyPath var pointing to your own .json file
+
+0. `$ cd functions` to switch to this folder
+1. `$ yarn global add firebase-tools` to install the Firebase CLI globally
+2. `$ yarn` to install JS dependencies
+3. `$ firebase login` to authenticate the CLI tools to Firebase
+4. `$ firebase use project_id` to choose the dev project.
+5. `$ gcloud auth login` to authenticate the CLI tools to Google Cloud
+6. `$ gcloud config set project <project-id>` to choose the project (`$ gcloud projects list` to see options)
+7. `$ cd .. && cd web && yarn`
+8. Go to projects root and run : `./dev.sh localdb`
+
 ## Getting started
 
 0. Make sure you have [Yarn 1.x][yarn]
