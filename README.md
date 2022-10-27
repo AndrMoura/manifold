@@ -14,7 +14,7 @@ This [monorepo][] has basically everything involved in running and operating Man
 
 - Create firebase project: https://console.firebase.google.com/. Create an web app too and grab it's configuration and change it at `$ ./common/envs/dev.ts`
 - Create a private key from firebase project settings: Service Account tab > Firebase SDK admin and download the `.json`.
-- `$ \functions\src\scripts\script-init.ts` and change keyPath var pointing to your own .json file
+- at `\functions\src\scripts\script-init.ts` and change keyPath var pointing to your own .json file
 
 0. `$ cd functions` to switch to this folder
 1. `$ yarn global add firebase-tools` to install the Firebase CLI globally
